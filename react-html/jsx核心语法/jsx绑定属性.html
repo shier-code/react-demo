@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello React!</title>
+  <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+  <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+  <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+
+  <div id="app"></div>
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          title: "标题",
+          active: true,
+          movies: ['nba', 'dna', 'mba', 'fpga'],
+          isLogin: false,
+          numbers: [22, 12, 54, 66, 83]
+        }
+        this.btnClick = this.btnClick.bind(this)//事件绑定重新赋值
+      }
+      render() {
+        const { title, active } = this.state;
+        let welcome = "";
+        if (this.state.isLogin) {
+          welcome = <h2>欢迎回来</h2>
+        } else {
+          welcome = <h2>请先登录</h2>
+        }
+        return (
+          <div>
+            {/*绑定class*/}
+            <div title={this.state.title}> this is app</div>
+            <div className={"box title" + (active ? "add-class" : "")}>jsx class</div>
+            {/*绑定style*/}
+            <div style={{ color: "red", fontSize: "20px" }}>jsx style </div>
+            {/*绑定事件方案一*/}
+            <button onClick={this.btnClick.bind(this)}>事件绑定</button>
+            <button onClick={this.btnClick}>事件绑定2</button>
+            {/*绑定事件方案二*/}
+            <button onClick={this.increase}>事件绑定3</button>
+            {/*绑定事件方案三：推荐*/}
+            <button onClick={() => { this.decreament() }}>事件绑定3</button>
+            <ul>
+              {
+                this.state.movies.map((item, index) => {
+                  return <li onClick={e => { this.liClick(item, index, e) }} key={index}>{item}</li>
+                })
+              }
+            </ul>
+            {/*条件渲染*/}
+            <span>{welcome}</span>
+            <button onClick={e => this.loginClick()}>{this.state.isLogin ? '退出' : '登录'}</button>
+            <h2>{this.state.isLogin && "条件渲染显示隐藏"}</h2>
+
+            {/*列表渲染*/}
+            <ul>
+              {
+                this.state.numbers.filter(item =>  item >= 20 ).map((item, i) => {
+                  return <li key={i}>{item}</li>
+                })
+              }
+            </ul>
+          </div >
+
+        )
+      }
+      btnClick() {
+        console.log('2222222222', this.state.title);
+      }
+      increase = () => {
+        console.log('33333333333', this.state.active);
+      }
+      decreament() {
+        console.log('4444444444', this.state.active);
+      }
+      liClick(item, index, event) {
+        console.log('55555555555', index, item, event);
+
+      }
+      loginClick() {
+        this.setState({
+          isLogin: !this.state.isLogin
+        })
+      }
+    }
+    ReactDOM.render(
+      <App />, document.getElementById("app")
+    );
+  </script>
+
+</body>
+
+</html>
