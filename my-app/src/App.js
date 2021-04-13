@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: v3.10
+ * @Author: wentan
+ * @Date: 2020-08-14 14:11:37
+ * @LastEditors: wentan
+ * @LastEditTime: 2021-04-13 20:51:18
+ */
 import React from 'react';
 import './App.css';
 import ComponentLife from "./component/ComponentLife.jsx";
@@ -8,6 +16,8 @@ import RefsFoem from "./component/RefsForm.jsx";
 import PropsType from "./component/PropsType.jsx";
 import UserAntd from "./component/UserAntd";
 import UserFetch from "./component/userFetch";
+import Parent from "./component/stateUp/parent";
+import Componse from "./component/Componse";
 // function App() {
 //   return (
 //     <div className="App">
@@ -48,6 +58,10 @@ class App extends React.Component {
         <UserAntd></UserAntd>
         <hr />
         <UserFetch></UserFetch>
+        <hr />
+        <Parent></Parent>
+        <hr />
+        <Componse><div>Componse组合效果</div></Componse>
       </div>
     )
   }
