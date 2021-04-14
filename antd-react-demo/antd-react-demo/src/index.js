@@ -4,14 +4,14 @@
  * @Author: wentan
  * @Date: 2021-04-14 09:49:40
  * @LastEditors: wentan
- * @LastEditTime: 2021-04-14 09:58:05
+ * @LastEditTime: 2021-04-14 10:48:11
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import 'antd/dist/antd.css'
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
