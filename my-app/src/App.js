@@ -4,10 +4,11 @@
  * @Author: wentan
  * @Date: 2020-08-14 14:11:37
  * @LastEditors: wentan
- * @LastEditTime: 2021-04-14 12:45:55
+ * @LastEditTime: 2021-04-14 15:13:52
  */
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ComponentLife from "./component/ComponentLife.jsx";
 import TodoList from "./component/TodoList.jsx";
 import ForkeyDemo from "./component/ForKeyDemo.jsx"
@@ -18,14 +19,12 @@ import UserAntd from "./component/UserAntd";
 import UserFetch from "./component/userFetch";
 import Parent from "./component/stateUp/parent";
 import Componse from "./component/Componse";
-// function App() {
-//   return (
-//     <div className="App">
-//       hello
-//     </div>
-//   );
-// }
-
+import Home from "./pages/Home";
+import Mine from "./pages/Mine";
+import UCenter from "./pages/UCenter";
+import Notfound from "./pages/Notfound";
+import Demo from "./pages/Demo";
+import Nav from "./component/Nav/index"
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -57,11 +56,26 @@ class App extends React.Component {
         <hr />
         <UserAntd></UserAntd>
         <hr />
-        <UserFetch></UserFetch>
+        {/* <UserFetch></UserFetch> */}
         <hr />
         <Parent></Parent>
         <hr />
         <Componse><div>Componse组合效果</div></Componse>
+        <hr />
+        <h3>这里是路由demo</h3>
+        <Router>
+          <Nav />
+          <Switch>
+            {/* 精准匹配 */}
+            <Route strict exact path="/" component={Home} ></Route>
+            <Route strict exact path="/mine" component={Mine} ></Route>
+            <Route path="/mine/ucenter" component={UCenter}></Route>
+            <Route path="/demo" render={(props) => <Demo {...props} name="你好"/>}></Route>
+
+            <Route component={Notfound}></Route>
+          </Switch>
+        </Router>
+
       </div>
     )
   }
