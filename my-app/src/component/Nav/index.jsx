@@ -1,13 +1,20 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import './style.css'
 export default class App extends React.Component {
   render() {
     return (
       <ul>
-        <li><Link to="/">home</Link></li>
-        <li><Link to="/mine">mine</Link></li>
-        <li><Link to="/mine/ucenter">ucenter</Link></li>
-        <li><Link to="/demo">demo</Link></li>
+        <li><NavLink exact activeClassName="selected-class" activeStyle={{ background: 'red' }} to="/">home</NavLink></li>
+        <li><NavLink exact activeClassName="selected-class"
+          to={{
+            pathname: '/mine',
+            search: "?sort=name",
+            hash: "#the-hash",
+            state: { flag: "flag" }
+          }}>mine</NavLink></li>
+        <li><NavLink exact activeClassName="selected-class" to="/mine/ucenter">ucenter</NavLink></li>
+        <li><NavLink exact activeClassName="selected-class" to="/demo">demo</NavLink></li>
       </ul>
     )
   }
