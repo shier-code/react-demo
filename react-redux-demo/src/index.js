@@ -4,30 +4,32 @@
  * @Author: wentan
  * @Date: 2021-04-20 16:12:26
  * @LastEditors: wentan
- * @LastEditTime: 2021-04-20 17:31:17
+ * @LastEditTime: 2021-04-22 20:19:03
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { createStore } from "redux"
-import reducer from "./reducers/counter"
-// reducer是一个纯函数，他将传入的state和action结合起来生成新的state
-const store = createStore(reducer);
+//自己封装库
+import { StoreContext } from "./utils/context"
+//第三方库
+import { Provider } from "react-redux"
+import store from './store';
 
 
 const render = () => {
   ReactDOM.render(
-    <React.StrictMode>
+    <StoreContext.Provider value={store}>
       <App
-        value={store.getState()}
-        onIncreament={() => { store.dispatch({ type: "INCREAMENT" }) }}
-        onDecreament={() => { store.dispatch({ type: "DECREAMENT" }) }} />
-    </React.StrictMode>,
+      />
+    </StoreContext.Provider>,
+    // <Provider store={store}>
+    //   <App />
+    // </Provider>,
     document.getElementById('root')
   );
 }
 
 render()
-store.subscribe(render)
+
 

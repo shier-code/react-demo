@@ -4,19 +4,17 @@
  * @Author: wentan
  * @Date: 2021-04-20 16:12:26
  * @LastEditors: wentan
- * @LastEditTime: 2021-04-21 15:59:34
+ * @LastEditTime: 2021-04-22 10:03:47
  */
 
 import './App.css';
-
+import About from './pages/about2'
+import Home from './pages/home'
 function App(props) {
   return (
     <div className="container">
-      <h3>{props.value}</h3>
-      <p>
-        <button onClick={props.onIncreament()}>increament</button>
-        <button onClick={props.onDecreament()}>decreament</button>
-      </p>
+      <About/>
+      <Home/>
     </div >
   );
 }
