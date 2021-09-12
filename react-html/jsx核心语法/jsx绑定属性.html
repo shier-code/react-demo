@@ -60,9 +60,10 @@
             <h2>{this.state.isLogin && "条件渲染显示隐藏"}</h2>
 
             {/*列表渲染*/}
+            
             <ul>
               {
-                this.state.numbers.filter(item =>  item >= 20 ).map((item, i) => {
+                  this.state.numbers.filter(item =>  item >= 20 ).map((item, i) => {
                   return <li key={i}>{item}</li>
                 })
               }

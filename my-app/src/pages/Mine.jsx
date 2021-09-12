@@ -1,9 +1,9 @@
 import React from 'react'
 import MineDemo from './MineDemo'
 export default class Mine extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
   clickHandle = () => {
     console.log('shijian')
     console.log(this.props)

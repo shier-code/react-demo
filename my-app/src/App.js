@@ -53,6 +53,9 @@ class App extends React.Component {
         <hr />
         <RefsFoem></RefsFoem>
         <hr />
+
+        {/* 组件传值 */}
+        <h2>组件传值</h2>
         <PropsType title={this.state.title}></PropsType>
         <hr />
         <UserAntd></UserAntd>

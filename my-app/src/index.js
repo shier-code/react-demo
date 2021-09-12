@@ -8,11 +8,9 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import { createStore } from "redux"
-import reducer from "./reducers/counter"
-//创建store仓库
-const store = createStore(reducer)
+// import App from './App';
+import App from './component/组件的通信//案例/App';
+import './component/组件的通信/案例/style.css';
 ReactDOM.render(
   <React.StrictMode>
     <div>

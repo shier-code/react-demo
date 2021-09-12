@@ -6,6 +6,7 @@ export default class ComponentLife extends React.Component {
     this.state = {
       count: 10
     }
+    console.log("执行了组件的constructor");
   }
   componentWillMount() {
     console.log('componentWillMount')
@@ -34,6 +35,7 @@ export default class ComponentLife extends React.Component {
     this.setState({ count: addCount +=2})
   }
   render() {
+    console.log("执行了组件的render");
     return (
       <div>
         {this.state.count}
