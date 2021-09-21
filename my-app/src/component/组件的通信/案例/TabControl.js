@@ -25,10 +25,12 @@ export default class TabControl extends Component {
         )
     }
     itemClick(index){
-        debugger
+     
         this.setState({
             currentIndex:index
         })
+        const {itemClickChild}=this.props
+        itemClickChild(index)
     }
 }
 TabControl.propTypes={

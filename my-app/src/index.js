@@ -9,8 +9,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
-import App from './component/组件的通信//案例/App';
-import './component/组件的通信/案例/style.css';
+import App from './component/体验hooks/04_userContext的使用/userContext'
+import './component//react实现slot/style.css';
 ReactDOM.render(
   <React.StrictMode>
     <div>
