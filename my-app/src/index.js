@@ -4,12 +4,12 @@
  * @Author: wentan
  * @Date: 2020-08-14 14:11:37
  * @LastEditors: went
- * @LastEditTime: 2021-09-23 19:43:46
+ * @LastEditTime: 2021-09-23 19:55:00
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
-import App from './component/体验hooks/07_useMome的使用/useMemo复杂计算应用'
+import App from './component/体验hooks/07_useMome的使用/02-useMemo传入子组件应用类型'
 import './component//react实现slot/style.css';
 ReactDOM.render(
   <React.StrictMode>
