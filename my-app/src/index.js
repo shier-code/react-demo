@@ -3,13 +3,13 @@
  * @version: v3.10
  * @Author: wentan
  * @Date: 2020-08-14 14:11:37
- * @LastEditors: wentan
- * @LastEditTime: 2021-04-20 16:07:51
+ * @LastEditors: went
+ * @LastEditTime: 2021-09-23 19:43:46
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
-import App from './component/体验hooks/04_userContext的使用/userContext'
+import App from './component/体验hooks/07_useMome的使用/useMemo复杂计算应用'
 import './component//react实现slot/style.css';
 ReactDOM.render(
   <React.StrictMode>
