@@ -4,22 +4,41 @@
  * @Author: wentan
  * @Date: 2021-04-21 16:27:52
  * @LastEditors: wentan
- * @LastEditTime: 2021-04-22 16:34:07
+ * @LastEditTime: 2021-04-25 19:13:33
  */
 import React from "react"
-import { connect } from "../utils/connet"
-import { addAction } from "../store/actionCreators"
-function about(props) {
-  return (
-    <div>
-      <h1>about</h1>
-      <h2>当前计数：{props.counter}</h2>
-      <button onClick={e => props.increament()}>+1</button>
-      <button onClick={e => props.addNumber(5)}>+5</button>
-    </div>
-  );
+//使用封装的connect
+// import { connect } from "../utils/connet"
+import { connect } from "react-redux"
+import axios from "axios"
+import { addAction, changeBannersAction, getHomeMultidataAction } from "../store/actionCreators"
 
+class about extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  render() {
+    return (
+      <div>
+        <h1>about</h1>
+        <h2>当前计数：{this.props.counter}</h2>
+        <button onClick={e => this.props.increament()}>+1</button>
+        <button onClick={e => this.props.addNumber(5)}>+5</button>
+      </div>
+    );
+  }
+  componentDidMount() {
+    // axios({
+    //   url: "http://123.207.32.32:8000/home/multidata"
+    // }).then(res => {
+    //   const data = res.data.data;
+    //   this.props.changeBaners(data.banner.list)
+    // })
+    this.props.getHomeMultidata()
+  }
 }
+
 const mapStateToProps = state => {
   return {
     counter: state.counter
@@ -32,6 +51,12 @@ const mapDispatchToProps = dispatch => {
     },
     addNumber: function (num) {
       dispatch(addAction(num))
+    },
+    changeBaners: function (banners) {
+      dispatch(changeBannersAction(banners))
+    },
+    getHomeMultidata: function () {
+      dispatch(getHomeMultidataAction)
     }
   }
 }

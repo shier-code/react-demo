@@ -1,5 +1,13 @@
+/*
+ * @Desc: 
+ * @Version: v1.00
+ * @Author: went
+ * @Date: 2021-09-22 14:59:31
+ * @LastEditors: went
+ * @LastEditTime: 2021-09-29 11:34:31
+ */
 import React, { useState, useEffect } from 'react'
-
+// useEffect会在会在渲染的内容更新到dom之后执行
 export default function EffectHockCancelDemo() {
     const [counter, setState] = useState(0)
     //多个useEffect按定义顺序执行,

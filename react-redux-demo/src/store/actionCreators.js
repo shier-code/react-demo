@@ -4,9 +4,10 @@
  * @Author: wentan
  * @Date: 2021-04-21 10:57:04
  * @LastEditors: wentan
- * @LastEditTime: 2021-04-22 10:00:45
+ * @LastEditTime: 2021-04-25 19:22:52
  */
-import { ADD_NUMBER, SUB_NUMBER } from "./constants.js"
+import axios from "axios"
+import { ADD_NUMBER, SUB_NUMBER, CHANGE_BANNERS } from "./constants.js"
 export const addAction = (num) => {
   return {
     type: ADD_NUMBER,
@@ -25,3 +26,17 @@ export const incAction = () => ({
 export const decAction = () => ({
   type: "DECREAMENT",
 })
+//推波图数据
+export const changeBannersAction = (banners) => ({
+  type: CHANGE_BANNERS,
+  banners
+})
+//redux-thunk中定义的action函数
+export const getHomeMultidataAction = (dispatch,getState) => {
+  axios({
+    url: "http://123.207.32.32:8000/home/multidata"
+  }).then(res => {
+    const data = res.data.data;
+    dispatch(changeBannersAction(data.banner.list))
+  })
+}
