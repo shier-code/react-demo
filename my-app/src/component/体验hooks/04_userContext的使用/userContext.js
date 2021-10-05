@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from 'react'
 
-const UseContext = createContext()
+const UserContext = createContext()
 const ThemeContext = createContext()
 
 export default function userContext() {
@@ -15,7 +15,7 @@ export default function userContext() {
     )
 }
 function ChildContext() {
-    const user = useContext(UseContext)
+    const user = useContext(UserContext)
     const theme = useContext(ThemeContext)
     return (
         <div>{user.name}--{theme.color}</div>
