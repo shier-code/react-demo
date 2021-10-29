@@ -4,12 +4,12 @@
  * @Author: wentan
  * @Date: 2021-04-21 16:27:52
  * @LastEditors: went
- * @LastEditTime: 2021-10-14 14:16:14
+ * @LastEditTime: 2021-10-18 14:37:23
  */
 import React from "react"
 //使用封装的connect
-import { connect } from "../utils/connect"
-// import { connect } from "react-redux"
+// import { connect } from "../utils/connect"
+import { connect } from "react-redux"
 // import axios from "axios"
 import { addAction, changeBannersAction, getHomeMultidataAction } from "../store/actionCreators"
 

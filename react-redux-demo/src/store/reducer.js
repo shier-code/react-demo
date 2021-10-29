@@ -3,14 +3,15 @@
  * @version: v3.10
  * @Author: wentan
  * @Date: 2021-04-21 10:49:55
- * @LastEditors: wentan
- * @LastEditTime: 2021-04-25 17:14:52
+ * @LastEditors: went
+ * @LastEditTime: 2021-10-18 15:53:45
  */
-import { ADD_NUMBER, SUB_NUMBER, CHANGE_BANNERS } from "./constants.js"
+import { ADD_NUMBER, SUB_NUMBER, CHANGE_BANNERS, CHANGE_RECOMMEND } from "./constants.js"
 
 const defaultState = {
   counter: 0,
-  banners: []
+  banners: [],
+  recommends: []
 }
 function reducer(state = defaultState, action) {
   switch (action.type) {
@@ -20,6 +21,8 @@ function reducer(state = defaultState, action) {
       return { ...state, counter: state.counter - action.num };
     case CHANGE_BANNERS:
       return { ...state, banners: action.banners };
+    case CHANGE_RECOMMEND:
+      return { ...state, banners: action.recommends };
     default:
       return state;
   }

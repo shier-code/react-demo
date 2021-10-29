@@ -8,12 +8,13 @@
  */
 import React from "react"
 import store from "../store"
-import { subAction } from "../store/actionCreators"
+import { subAction, incAction, addAction } from "../store/actionCreators"
 class home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: store.getState().counter
+      counter: store.getState().counter,
+      banners: store.getState().banners
     }
   }
   componentDidMount() {
@@ -39,6 +40,13 @@ class home extends React.Component {
         <h2>当前计数：{this.state.counter}</h2>
         <button onClick={e => this.decreament()}>-1</button>
         <button onClick={e => this.subNumber(5)}>-5</button>
+        <h1>
+          <ul>
+            {this.state.banners.map((item, index) => {
+              return <li key={item.acm}>{item.title}</li>
+            })}
+          </ul>
+        </h1>
       </div>
     );
   }
