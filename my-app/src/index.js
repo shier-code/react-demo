@@ -9,7 +9,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import App from './App';
-import App from './component/体验hooks/11_自定义hook/01_认识自定义hook_context共享'
+import App from './component/体验hooks/11_自定义hook/03_认识自定义hook_localStore存储'
 import './component//react实现slot/style.css';
 ReactDOM.render(
   <React.StrictMode>
