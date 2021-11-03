@@ -1,3 +1,11 @@
+/*
+ * @Desc: 
+ * @Version: v1.00
+ * @Author: went
+ * @Date: 2021-11-01 16:26:22
+ * @LastEditors: went
+ * @LastEditTime: 2021-11-02 13:22:44
+ */
 import originAxios from 'axios';
 
 export default function request(option) {
@@ -7,7 +15,6 @@ export default function request(option) {
 			baseURL: 'http://123.207.32.32:9001/',
 			timeout: 10000
 		});
-
 		// 配置请求和响应拦截
 		instance.interceptors.request.use(config => {
 			// console.log('来到了request拦截success中');
@@ -31,8 +38,8 @@ export default function request(option) {
 			return response.data
 		}, err => {
 			console.log('来到了response拦截failure中');
-      console.log(err);
-      if (err && err.response) {
+			console.log(err);
+			if (err && err.response) {
 				switch (err.response.status) {
 					case 400:
 						err.message = '请求错误'

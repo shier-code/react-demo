@@ -4,7 +4,7 @@
  * @Author: went
  * @Date: 2021-10-29 17:12:04
  * @LastEditors: went
- * @LastEditTime: 2021-11-01 16:36:24
+ * @LastEditTime: 2021-11-02 11:43:18
  */
 import React, { memo, useEffect } from 'react'
 import { renderRoutes } from 'react-router-config'
@@ -23,12 +23,9 @@ export default memo(function WTDiscover(props) {
     request({
       url: "/banner"
     }).then(res => {
-      console.log('==', res);
-
     })
-
   }, [])
-  const { routes } = props
+  const { route } = props
   return (
     <DiscoverWrapper>
       <div className="top">
@@ -44,7 +41,7 @@ export default memo(function WTDiscover(props) {
           }
         </TopMenu>
       </div>
-      {renderRoutes(routes)}
+      {renderRoutes(route.routes)}
     </DiscoverWrapper>
   )
 })
