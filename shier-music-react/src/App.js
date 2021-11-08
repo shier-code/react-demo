@@ -4,27 +4,21 @@
  * @Author: went
  * @Date: 2021-10-29 15:15:51
  * @LastEditors: went
- * @LastEditTime: 2021-11-01 16:58:11
+ * @LastEditTime: 2021-11-08 11:01:41
  */
-import React, { memo } from 'react'
-import { Provider } from 'react-redux'
-import { renderRoutes } from 'react-router-config'
-import routes from './router'
-import store from './store'
+import React from 'react';
 
-import WTAppHeader from '@/components/app-header'
-import WTAppFooter from '@/components/app-footer'
-import { HashRouter } from 'react-router-dom'
+import { Provider } from "react-redux";
+import store from "./store";
 
-export default memo(function App() {
+import HYMain from './pages/main';
+
+function App() {
   return (
     <Provider store={store}>
-      <HashRouter>
-        <WTAppHeader />
-        {renderRoutes(routes)}
-        <WTAppFooter />
-      </HashRouter>
+      <HYMain/>
     </Provider>
+  );
+}
 
-  )
-})
+export default App;
