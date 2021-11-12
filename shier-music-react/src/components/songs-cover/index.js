@@ -4,7 +4,7 @@
  * @Author: went
  * @Date: 2021-11-03 16:32:34
  * @LastEditors: went
- * @LastEditTime: 2021-11-03 16:59:40
+ * @LastEditTime: 2021-11-11 13:58:15
  */
 import React, { memo } from 'react'
 import { ThemeCoverWrapper } from './style'
@@ -32,7 +32,7 @@ export default memo(function WTSongsCover(props) {
         {info.name}
       </div>
       <div className="cover-source text-nowrap">
-        by {info.copywriter || info.creator.nickname}
+        {/* by {info.copywriter || info.creator.nickname} */}
       </div>
     </ThemeCoverWrapper>
   )
